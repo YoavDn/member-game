@@ -1,14 +1,21 @@
 import './assets/style/main.scss'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Routes } from 'react-router';
-import Home from './pages/Home/Home'
+import Home from './pages/Home'
+import About from './pages/About'
+import MemoryGame from './pages/Game'
+import NavApp from './components/NavApp/NavApp';
 
 
 function App() {
   return (
+
     <Router>
+      <NavApp />
       <Routes>
-        <Route path="/" component={Home} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/game" element={<Game />} />
       </Routes>
     </Router>
   )

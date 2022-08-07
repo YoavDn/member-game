@@ -1,0 +1,28 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .hero-img {
+        width: 50%;
+        margin-block: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: 700;
+
+    }
+
+    .main-play-btn {
+        margin-top: 3rem;
+        font-size: 3rem;
+        background-color: $clr2;
+        color: $clr3;
+        padding: 10px 20px;
+        border-radius: 1rem;
+
+    }
+}
