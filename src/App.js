@@ -1,19 +1,17 @@
-import logo from './logo.svg';
-import PetList from './PetList';
-import PetForm from './petForm';
-import './App.css';
+import './assets/style/main.scss'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Route, Routes } from 'react-router';
+import Home from './pages/Home/Home'
 
-
-const pets = ['Joey', 'Look', "Jeny"]
-// const petList = pets.map(pet => <div>{pet}</div>)
 
 function App() {
   return (
-    <div>
-      <PetForm />
-    </div>
-
-  );
+    <Router>
+      <Routes>
+        <Route path="/" component={Home} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;
