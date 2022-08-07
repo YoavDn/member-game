@@ -10,13 +10,15 @@
     .game-title {
         margin-block: 3rem;
         font-size: 4rem;
+
     }
 
     .cards-list {
+        margin-top: 1rem;
         width: 100%;
         display: grid;
+        grid-gap: 14px;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-
 
     }
 }

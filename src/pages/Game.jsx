@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from 'react-router'
+import { useNavigate } from "react-router";
 import MemberCard from "../components/MemberCard";
 import MsgModal from "../components/MsgModal";
 
@@ -44,10 +45,12 @@ const Game = () => {
     const [card2, setCard2] = useState(null)
     const [disabled, setDisabled] = useState(false)
     const [gameEnded, setGameEnded] = useState(false)
+    let navigate = useNavigate();
 
     const suffleCards = () => {
         const suffleCards = [...cardsObj, ...cardsObj]
-            .sort(() => Math.random() - .5).map(card => ({ ...card, id: Math.random() }))
+            .sort(() => Math.random() - .5)
+            .map(card => ({ ...card, id: Math.random() }))
 
         setCards(suffleCards)
         setTurns(0)
@@ -60,8 +63,8 @@ const Game = () => {
     useEffect(() => {
         if (card1 && card2 && !gameEnded) {
             setDisabled(true)
-
             if (card1.id === card2.id) return
+
             if (card1.name === card2.name) {
                 console.log("it's a match !")
                 setCards(prevCards => {
@@ -78,23 +81,37 @@ const Game = () => {
         }
     }, [card1, card2])
 
+    useEffect(() => {
+        setGameEnded(cards.every(card => card.matched))
+    }, [cards])
+
     const handleOption = (card) => {
         card1 ? setCard2(card) : setCard1(card)
     }
 
     const resetTurns = () => {
-        if (cards.every(card => card.matched)) return setGameEnded(true)
+        if (cards.every(card => card.matched)) setGameEnded(true)
         setCard1(null)
         setCard2(null)
         setTurns((prevTurn) => prevTurn + 1)
         setDisabled(false)
     }
 
+    const handleBtnAction = (btnOption) => {
+        if (btnOption === 'play') {
+            suffleCards()
+        } else {
+            navigate('/')
+        }
+        setGameEnded(false)
+    }
+
 
     return (
         <div className="game-page ">
-            <MsgModal msg={'You Won !'} />
-            <h2 className="game-title" >Memeber</h2>
+            {gameEnded && <MsgModal msg={'You Won !'} handleBtnAction={handleBtnAction} />}
+            <h2 className="game-title">Member</h2>
+            <h2>Turns:{turns}</h2>
             <div className="cards-list">
                 {cards.map(card => (
                     <MemberCard key={card.id}

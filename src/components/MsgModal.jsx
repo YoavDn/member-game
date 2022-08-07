@@ -2,7 +2,8 @@
 import React from "react"
 
 
-const MsgModal = ({ msg }) => {
+const MsgModal = ({ msg, handleBtnAction }) => {
+
     return (
         <div>
             <div className="overlay"></div>
@@ -10,8 +11,8 @@ const MsgModal = ({ msg }) => {
                 <h2>{msg}</h2>
             </div>
             <div className="actions-btns flex">
-                <button className="play-again-btn" >Play Again</button>
-                <button className="leave-btn">Leave Game</button>
+                <button onClick={() => handleBtnAction('play')} className="play-again-btn" >Play Again</button>
+                <button onClick={() => handleBtnAction('leave')} className="leave-btn">Leave Game</button>
             </div>
 
         </div>
