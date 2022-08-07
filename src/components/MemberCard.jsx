@@ -1,10 +1,12 @@
 import memeberBarry from '../assets/images/Member_Berries.png'
 
 
-const MemberCard = ({ card, handleOption, flipped }) => {
+const MemberCard = ({ card, handleOption, flipped, disabled }) => {
 
     const hendleClick = () => {
-        handleOption(card)
+        if (!disabled) {
+            handleOption(card)
+        }
     }
 
     return (
