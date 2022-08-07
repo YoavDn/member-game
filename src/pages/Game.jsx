@@ -26,6 +26,11 @@ const cardsObj = [
         imgUrl: 'https://www.tradeinn.com/f/10/104739/crocs-crocband-clogs.jpg',
         matched: false
     },
+    {
+        name: 'Tamagotchi',
+        imgUrl: 'https://m.media-amazon.com/images/I/819ZUKGJraS._AC_SL1500_.jpg',
+        matched: false
+    },
 ]
 
 

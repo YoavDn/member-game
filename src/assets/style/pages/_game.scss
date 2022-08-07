@@ -15,30 +15,36 @@
     .cards-list {
         width: 100%;
         display: grid;
-        grid-gap: 14px;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        justify-content: center;
+
 
     }
 }
 
 @media (min-width: 700px) {
     .game-page {
-
-
-
-
-
-
         .game-title {
-
             font-size: 4rem;
         }
 
         .cards-list {
-            width: 70%;
+            width: 600px;
             display: grid;
-            grid-gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+
+        }
+    }
+}
+
+@media (min-width: 914px) {
+    .game-page {
+        .game-title {
+            font-size: 4.4rem;
+        }
+
+        .cards-list {
+            width: 914px;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             justify-content: center;
 
