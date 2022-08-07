@@ -8,10 +8,10 @@ import logo from '../assets/images/Member_Berries.png'
 const Home = () => {
     return (
         <div className="home-page main-view" >
+            <h2 className="hero-subtitle" >Think you have a Good Memory ?</h2>
             <img className="hero-img" src={logo} alt="" />
-            <h2 className="hero-subtitle" >Think you have a good memory ?</h2>
 
-            <Link to='/game'><button className="main-play-btn">PLAY</button></Link>
+            <Link to='/game'><button className="main-play-btn">Play</button></Link>
         </div >
     )
 }

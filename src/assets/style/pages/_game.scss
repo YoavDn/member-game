@@ -1,0 +1,19 @@
+.game-page {
+    color: white;
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .game-title {
+        margin-block: 3rem;
+        font-size: 4rem;
+    }
+
+    .cards-list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+    }
+}

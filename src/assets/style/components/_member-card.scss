@@ -1,0 +1,15 @@
+.member-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $clr5;
+    height: 130px;
+    width: 100px;
+    border-radius: .5rem;
+
+
+    .member-card-img {
+        width: 70px;
+    }
+
+}

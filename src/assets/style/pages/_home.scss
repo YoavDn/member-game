@@ -6,22 +6,26 @@
 
     .hero-img {
         width: 60%;
-        margin-bottom: 3rem;
+        margin-top: 3rem;
     }
 
     .hero-subtitle {
-        font-size: 3rem;
+        font-size: 4rem;
         text-align: center;
         font-weight: 700;
+        letter-spacing: -.2rem;
+        background: -webkit-linear-gradient(60deg, $clr2 , $clr1 70%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
     }
 
     .main-play-btn {
         margin-top: 3rem;
-        font-size: 3rem;
-        background-color: $clr2;
-        color: $clr3;
-        padding: 10px 20px;
+        font-size: 2rem;
+        background-color: $clr1;
+        color: $clr4;
+        padding: 8px 20px;
         border-radius: 1rem;
 
     }
