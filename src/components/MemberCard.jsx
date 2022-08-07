@@ -6,8 +6,9 @@ const MemberCard = ({ card }) => {
         <div className="member-card">
             {
                 card.isOpen ?
-                    <div>
+                    <div className='open-member-card'>
                         <h2>{card.name}</h2>
+                        <img className='card-img' src={card.imgUrl} alt="" />
                     </div> :
                     <img className='member-card-img' src={memeberBarry} alt="" />
             }

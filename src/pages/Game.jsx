@@ -1,29 +1,46 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from 'react-router'
 import MemberCard from "../components/MemberCard";
 
-const cards = [
+const cardsObj = [
     {
-        id: 1,
         name: 'Joey',
         isOpen: false,
         imgUrl: 'https://res.cloudinary.com/soundwave-4/image/upload/v1659879064/qsm9dl3yggbijdnvcibf.jpg',
     },
     {
-        id: 3,
         name: 'Yoshi',
         isOpen: false,
         imgUrl: 'https://res.cloudinary.com/soundwave-4/image/upload/v1659879153/xeahnihibj436ncnyqsf.jpg',
     },
     {
-        id: 3,
         name: 'Sina',
         isOpen: false,
-        imgUrl: 'https://res.cloudinary.com/soundwave-4/image/upload/v1659879045/lbomlmmcb9hylx4ziug0.png'
-    }
+        imgUrl: 'https://res.cloudinary.com/soundwave-4/image/upload/v1659881108/ux7tpfpympwyeedigsjh.png'
+    },
 ]
 
+
+
+
+
 const Game = () => {
+    const [cards, setCards] = useState([])
+
+    const suffleCards = () => {
+        const suffleCards = [...cardsObj, ...cardsObj]
+            .sort(() => Math.random() - .5).map(card => ({ ...card, id: Math.random() }))
+
+        setCards(suffleCards)
+    }
+
+    useEffect(() => {
+        suffleCards()
+    }, [])
+
+
     return (
         <div className="game-page main-view">
             <h2 className="game-title" >Memeber</h2>

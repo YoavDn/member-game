@@ -6,10 +6,34 @@
     height: 130px;
     width: 100px;
     border-radius: .5rem;
+    position: relative;
+    margin-top: 2rem;
 
 
     .member-card-img {
         width: 70px;
+    }
+
+    .open-member-card {
+        h2 {
+            position: absolute;
+            font-size: 2rem;
+            padding: .2rem .6rem;
+            background-color: rgba($clr5, .5);
+            border-radius: .4rem;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 100px;
+            height: 130px;
+            border-radius: .5rem;
+
+            object-fit: cover;
+
+        }
     }
 
 }
