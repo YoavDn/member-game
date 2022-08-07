@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.space-between {
+    justify-content: space-between;
+}
+
 .overlay {
     position: fixed;
     padding-top: 3rem;
@@ -17,10 +21,48 @@
 
 .msg-modal {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
+    font-size: 1.4rem;
+
+    text-align: center;
     transform: translate(-50%, -50%);
     border-radius: 1rem;
     padding: 3rem;
     background-color: rgba(255, 255, 255, 0.2);
+    z-index: 102;
+}
+
+
+.actions-btns {
+    position: absolute;
+    justify-content: space-between;
+    flex-direction: column;
+    transform: translateX(10%);
+    bottom: 33%;
+    left: 0;
+    z-index: 102;
+    width: 80%;
+
+
+    button {
+        font-size: 1.7rem;
+        font-weight: 400;
+        margin-inline: 1.3rem;
+        border-radius: .3em;
+        margin-bottom: 1.3rem;
+    }
+
+    .play-again-btn {
+        background-color: $clr1;
+        color: $clr4;
+        padding: .5em 1em;
+    }
+
+    .leave-btn {
+        padding: .5em 1em;
+        background-color: $clr5;
+        color: $clr3;
+
+    }
 }

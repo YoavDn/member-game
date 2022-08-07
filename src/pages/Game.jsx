@@ -93,7 +93,7 @@ const Game = () => {
 
     return (
         <div className="game-page ">
-            {gameEnded && <MsgModal />}
+            <MsgModal msg={'You Won !'} />
             <h2 className="game-title" >Memeber</h2>
             <div className="cards-list">
                 {cards.map(card => (
