@@ -1,7 +1,9 @@
 .nav-full {
     background-color: $clr2;
 
+
     .main-nav {
+        height: 8vh;
         justify-content: space-between;
         align-items: center;
         color: white;
@@ -9,7 +11,6 @@
 
         .logo {
             font-size: 2rem;
-            line-height: 5rem;
             color: $clr3;
         }
 

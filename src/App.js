@@ -10,12 +10,12 @@ import NavApp from './components/NavApp/NavApp';
 function App() {
   return (
 
-    <Router>
+    <Router >
       <NavApp />
       <Routes>
         <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/game" element={<Game />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/game" element={<Game />} /> */}
       </Routes>
     </Router>
   )
