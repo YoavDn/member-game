@@ -1,4 +1,5 @@
 .member-card {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,15 +7,38 @@
     height: 130px;
     width: 100px;
     border-radius: .5rem;
-    position: relative;
     margin-top: 2rem;
+    transition: rotateY .2s ease-in;
 
 
-    .member-card-img {
-        width: 70px;
+    &.flipped {
+        .card-front {
+            transform: rotateY(0deg);
+            transition-delay: 0.2s;
+        }
+
+        .card-back {
+            transform: rotateY(-90deg);
+            transition-delay: 0s;
+        }
     }
 
-    .open-member-card {
+    .card-back {
+        position: absolute;
+        transform: rotateY(0deg);
+        transition: all ease-in 0.2s;
+        transition-delay: 0.2s;
+
+        img {
+            width: 70px;
+        }
+    }
+
+    .card-front {
+        transform: rotateY(90deg);
+        position: absolute;
+        transition: all ease-in 0.2s;
+
         h2 {
             position: absolute;
             font-size: 2rem;
@@ -30,10 +54,12 @@
             width: 100px;
             height: 130px;
             border-radius: .5rem;
-
             object-fit: cover;
 
         }
     }
+
+
+
 
 }

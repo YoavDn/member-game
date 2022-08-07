@@ -1,18 +1,23 @@
 import memeberBarry from '../assets/images/Member_Berries.png'
 
 
-const MemberCard = ({ card }) => {
+const MemberCard = ({ card, handleOption, flipped }) => {
+
+    const hendleClick = () => {
+        handleOption(card)
+    }
+
     return (
-        <div className="member-card">
-            {
-                card.isOpen ?
-                    <div className='open-member-card'>
-                        <h2>{card.name}</h2>
-                        <img className='card-img' src={card.imgUrl} alt="" />
-                    </div> :
-                    <img className='member-card-img' src={memeberBarry} alt="" />
-            }
+        <div className={flipped ? 'member-card flipped' : 'member-card'} onClick={hendleClick} >
+            <div className="card-front">
+                <h2>{card.name}</h2>
+                <img className='card-img' src={card.imgUrl} alt="" />
+            </div>
+            <div className='card-back'>
+                <img src={memeberBarry} alt="" />
+            </div>
         </div>
+
     )
 }
 
