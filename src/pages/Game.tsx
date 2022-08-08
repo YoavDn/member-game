@@ -1,12 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from 'react-router'
 import { useNavigate } from "react-router";
 import MemberCard from "../components/MemberCard";
 import MsgModal from "../components/MsgModal";
+import { IMemberCard } from "../types";
 
-const cardsObj = [
+
+
+const cardsObj: IMemberCard[] = [
     {
         name: 'Harlem Shake',
         imgUrl: 'https://www.howcoolbrandsstayhot.com/wp-content/uploads/2013/04/harlem-shake-430x3081.jpg',
@@ -39,10 +41,10 @@ const cardsObj = [
 
 
 const Game = () => {
-    const [cards, setCards] = useState([])
+    const [cards, setCards] = useState<IMemberCard[]>([])
     const [turns, setTurns] = useState(0)
-    const [card1, setCard1] = useState(null)
-    const [card2, setCard2] = useState(null)
+    const [card1, setCard1] = useState<null | IMemberCard>(null)
+    const [card2, setCard2] = useState<null | IMemberCard>(null)
     const [disabled, setDisabled] = useState(false)
     const [gameEnded, setGameEnded] = useState(false)
     let navigate = useNavigate();
@@ -59,6 +61,7 @@ const Game = () => {
     useEffect(() => {
         suffleCards()
     }, [])
+
 
     useEffect(() => {
         if (card1 && card2 && !gameEnded) {
@@ -85,19 +88,18 @@ const Game = () => {
         setGameEnded(cards.every(card => card.matched))
     }, [cards])
 
-    const handleOption = (card) => {
+    const handleOption = (card: IMemberCard): void => {
         card1 ? setCard2(card) : setCard1(card)
     }
 
     const resetTurns = () => {
-        if (cards.every(card => card.matched)) setGameEnded(true)
         setCard1(null)
         setCard2(null)
         setTurns((prevTurn) => prevTurn + 1)
         setDisabled(false)
     }
 
-    const handleBtnAction = (btnOption) => {
+    const handleBtnAction = (btnOption: string): void => {
         if (btnOption === 'play') {
             suffleCards()
         } else {
@@ -105,6 +107,7 @@ const Game = () => {
         }
         setGameEnded(false)
     }
+
 
 
     return (

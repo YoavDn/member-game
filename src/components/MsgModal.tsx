@@ -1,8 +1,10 @@
 
-import React from "react"
+type TModalProps = {
+    msg: string,
+    handleBtnAction: (btnOption: string) => void,
+}
 
-
-const MsgModal = ({ msg, handleBtnAction }) => {
+const MsgModal = ({ msg, handleBtnAction }: TModalProps) => {
 
     return (
         <div>
