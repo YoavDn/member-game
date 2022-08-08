@@ -1,3 +1,4 @@
+import React from 'react';
 import './assets/style/main.scss'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Route, Routes } from 'react-router';
